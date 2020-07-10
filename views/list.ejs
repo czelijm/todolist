@@ -1,0 +1,26 @@
+<%- include("header") -%>
+
+<body>
+  <div class="box" id="heading">
+    <h1><%=ejsObject2Receive.listTitle%></h1>
+  </div>
+
+  <!-- <h1>You are awesome!</h1> -->
+
+  <div class="box">
+    <ul>
+      <%for (var i = 0; i < ejsObject2Receive.taskArray.length; i++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p><%=ejsObject2Receive.taskArray[i]%></p>
+        </div>
+      <%}%>
+        <!-- <li><%=ejsObject2Receive.taskArray%></li> -->
+    </ul>
+    <form class="item" action="/" method="post">
+      <input type="text" name="task" placeholder="New Task" autocomplete="off">
+      <button type="submit" name="list" value=<%=ejsObject2Receive.listTitle%>>+</button>
+    </form>
+  </div>
+
+  <%- include("footer") -%>
